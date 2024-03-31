@@ -20,27 +20,27 @@ Firewall        : New security group
 ```
 
 2. Open terminal from your local machine where go-aws-service-key.pem is stored.
-3. Run following command to configure and open Instance Terminal
+3. Run following command to configure and open Instance Terminal.
 
 ```bash
 $ chmod 400 go-aws-service-key.pem
 $ ssh -i go-aws-service-key.pem ubuntu@3.88.197.228
 ```
 
-4. Update Instance package lists
+4. Update Instance package lists.
 
 ```bash
 $ sudo apt-get update
 ```
 
-5. Install Git and check Git version
+5. Install Git and check Git version.
 
 ```bash
 $ sudo apt-get install git
 $ git version
 ```
 
-6. Download go v1.21.1 from go.dev and open .tar.gz installation file
+6. Download go v1.21.1 from go.dev and open .tar.gz installation file.
 
 ```bash
 $ wget https://go.dev/dl/go1.21.1.linux-amd64.tar.gz
@@ -88,11 +88,12 @@ Master Password : yourpassword
 2. Change directory to web-service folder using `$ cd web-service`
 
 3. Clone go-aws-service repository from Github using `$ git clone https://github.com/ricotandrio/go-aws-service`
+
 4. Move to go-aws-service directory with `$ cd go-aws-service`
 
 5. Create .env file using `$ touch .env`
 
-6. Edit .env file using `$nano .env` and set `MYSQL_HOST=admin:yourpassword@tcp(mycustomersdb.choaaquocl25.us-east-1.rds.amazonaws.com:3306)/mycustomersdb`
+6. Edit .env file using `$ nano .env` and set `MYSQL_HOST=admin:yourpassword@tcp(mycustomersdb.choaaquocl25.us-east-1.rds.amazonaws.com:3306)/mycustomersdb`
 
 7. Install MySQL Client in AWS EC2 terminal.
 
@@ -106,9 +107,9 @@ $ sudo apt install mysql-client-core-8.0
 $ mysql -h mycustomersdb.choaaquocl25.us-east-1.rds.amazonaws.com -P 3306 -u admin -p
 ```
 
-9. Create database mycustomersdb using `CREATE DATABASE mycustomersdb;`
+9. Create database mycustomersdb using `> CREATE DATABASE mycustomersdb;`
 
-10. Run go service with `go run main.go` or `$ go run` at EC2 terminal.
+10. Run go service with `$ go run main.go` or `$ go run` at EC2 terminal.
 
 11. Access endpoint at `http://ec2-3-88-197-228.compute-1.amazonaws.com:8080/`
 
