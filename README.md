@@ -92,7 +92,7 @@ Master Password : yourpassword
 
 5. Create .env file using `$ touch .env`
 
-6. Edit .env file using `$nano .env` and set `MYSQL_HOST=admin:12345678@tcp(mycustomersdb.choaaquocl25.us-east-1.rds.amazonaws.com:3306)/mycustomersdb`
+6. Edit .env file using `$nano .env` and set `MYSQL_HOST=admin:yourpassword@tcp(mycustomersdb.choaaquocl25.us-east-1.rds.amazonaws.com:3306)/mycustomersdb`
 
 7. Install MySQL Client in AWS EC2 terminal.
 
@@ -123,5 +123,6 @@ $ mysql -h mycustomersdb.choaaquocl25.us-east-1.rds.amazonaws.com -P 3306 -u adm
 ![alt text](./assets/post.png)
 
 ### DELETE Endpoint `http://ec2-3-88-197-228.compute-1.amazonaws.com:8080/customers/1`
+
 ![alt text](./assets/delete.png)
 ![alt text](./assets/afterdelete.png)
