@@ -6,61 +6,61 @@ This repository contains my submission for the Distributed Cloud Computing Cours
 
 1. Fill EC2 configuration as,
 
-```bash
-Name            : go-service-aws
-OS              : Ubuntu Server 22.04 LTS (HVM), SSD Volume Type
-Architecture    : 64-bit (x86)
-Instance Type   : t2.micro
-Keypair Name    : go-aws-service-key
-Keypair Type    : RSA
-Keypair Format  : *.pem
-Network         : Default Settings with allow HTTPS traffic from the internet
-storage         : 28 GiB
-Firewall        : New security group
+```
+| Name            : go-service-aws
+| OS              : Ubuntu Server 22.04 LTS (HVM), SSD Volume Type
+| Architecture    : 64-bit (x86)
+| Instance Type   : t2.micro
+| Keypair Name    : go-aws-service-key
+| Keypair Type    : RSA
+| Keypair Format  : *.pem
+| Network         : Default Settings with allow HTTPS traffic from the internet
+| Storage         : 28 GiB
+| Firewall        : New security group
 ```
 
 2. Open terminal from your local machine where go-aws-service-key.pem is stored.
 3. Run following command to configure and open Instance Terminal.
 
 ```bash
-$ chmod 400 go-aws-service-key.pem
-$ ssh -i go-aws-service-key.pem ubuntu@3.88.197.228
+chmod 400 go-aws-service-key.pem
+ssh -i go-aws-service-key.pem ubuntu@3.88.197.228
 ```
 
 4. Update Instance package lists.
 
 ```bash
-$ sudo apt-get update
+sudo apt-get update
 ```
 
 5. Install Git and check Git version.
 
 ```bash
-$ sudo apt-get install git
-$ git version
+sudo apt-get install git
+git version
 ```
 
 6. Download go v1.21.1 from go.dev and open .tar.gz installation file.
 
 ```bash
-$ wget https://go.dev/dl/go1.21.1.linux-amd64.tar.gz
-$ sudo tar -C /usr/local -xzf go1.21.1.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.21.1.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.21.1.linux-amd64.tar.gz
 
 ```
 
 7. Configure go to Environments Variable and save configuration.
 
 ```bash
-$ export PATH=$PATH:/usr/local/go/bin
-$ export GOPATH=$HOME/go
-$ export PATH=$PATH:$GOPATH/bin
-$ source ~/.bashrc
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+source ~/.bashrc
 ```
 
 8. Check go version.
 
 ```bash
-$ go version
+go version
 ```
 
 ## AWS RDS
@@ -71,10 +71,10 @@ $ go version
 4. Choose DB Instance Identifier as **mycustomersdb.**
 5. Set Database Master as,
 
-```bash
-Master Username : admin
-Master Password : yourpassword
-Master Password : yourpassword
+```
+| Master Username : admin
+| Master Password : yourpassword
+| Master Password : yourpassword
 ```
 
 6. Set connectivity to connect EC2 Compute Resources with **go-aws-service.**
@@ -98,13 +98,13 @@ Master Password : yourpassword
 7. Install MySQL Client in AWS EC2 terminal.
 
 ```bash
-$ sudo apt install mysql-client-core-8.0
+sudo apt install mysql-client-core-8.0
 ```
 
 8. Open AWS RDS Query Editor using AWS EC2 terminal via MySQL Client.
 
 ```bash
-$ mysql -h mycustomersdb.choaaquocl25.us-east-1.rds.amazonaws.com -P 3306 -u admin -p
+mysql -h mycustomersdb.choaaquocl25.us-east-1.rds.amazonaws.com -P 3306 -u admin -p
 ```
 
 9. Create database mycustomersdb using `> CREATE DATABASE mycustomersdb;`
